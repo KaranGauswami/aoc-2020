@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input_file = File::open("day3.txt")?;
+    let input_file = File::open("inputs/day3.txt")?;
     let reader = std::io::BufReader::new(input_file);
 
     let mut square: Vec<Vec<char>> = Vec::new();

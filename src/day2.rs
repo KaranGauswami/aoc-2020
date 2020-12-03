@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input_file = File::open("day2.txt")?;
+    let input_file = File::open("inputs/day2.txt")?;
     let reader = std::io::BufReader::new(input_file);
 
     let re = Regex::new(r"(\d+)-(\d+) (\w): (\w+)").unwrap();
