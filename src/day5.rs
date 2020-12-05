@@ -1,6 +1,12 @@
 use std::fs::File;
 use std::io::prelude::*;
+
+use std::time::{Duration, Instant};
+use std::time::{SystemTime, UNIX_EPOCH};
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let instant = Instant::now();
+
     let input_file = File::open("inputs/day5.txt")?;
     let reader = std::io::BufReader::new(input_file);
     let mut max_seat_id = 0;
@@ -25,7 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     println!("max seat id is {}", max_seat_id);
-
+    println!("now millis: {:?}", instant.elapsed());
     Ok(())
 }
 fn get_seat_id(input: String) -> u64 {
