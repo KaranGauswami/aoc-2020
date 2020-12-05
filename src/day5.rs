@@ -1,8 +1,7 @@
 use std::fs::File;
 use std::io::prelude::*;
 
-use std::time::{Duration, Instant};
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::Instant;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let instant = Instant::now();
@@ -24,7 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut a = seat_ids[0] - 1;
     for i in seat_ids {
         if i - a != 1 {
-            println!("Your seatid is {}", i);
+            println!("Your seatid is {}", i - 1);
             a = i;
         } else {
             a = i
